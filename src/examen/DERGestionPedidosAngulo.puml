@@ -1,0 +1,34 @@
+@startuml
+
+
+entity "USERS" as users{
+* id : INT <<PK>>
+--
+* name : VARCHAR(100)
+* email : VARCHAR(100)
+
+}
+
+entity "PRODUCTS" as products{
+* id : INT <<PK>>
+--
+* name : VARCHAR(100)
+* price : DECIMAL(10,2)
+
+}
+
+
+
+entity "ORDERS" as orders{
+* id : INT <<PK>>
+--
+* user_id: INT <<PK>>
+* product_id: INT <<PK>>
+* quantity: INT
+* order_date: DATE
+}
+
+users ||--o{ orders: "realiza"
+products ||--o{ orders: "contiene"
+
+@enduml

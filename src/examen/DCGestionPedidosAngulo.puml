@@ -1,0 +1,35 @@
+@startuml
+
+class User{
+
++ id: int
++ name: String
++ email: String
++ register(): Void
++ viewCatalog(): Void
++ createOrder(): Void
++ viewOrderHistory(): Void
+
+}
+
+class Product{
+
++ id: int
++ name: String
++ price: float
++ viewDetails(): Void
+}
+
+class Order{
+
++ id: int
++ user_id: int
++ product_id: int
++ quantity: int
++ order_date: Date
++ generateOrder(): int 
+}
+
+User "1"--"*" Order : realiza >
+Product "1"--"*" Order : incluye >
+@enduml

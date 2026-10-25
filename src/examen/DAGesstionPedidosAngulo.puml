@@ -1,0 +1,18 @@
+@startuml
+start 
+:Usuario inicia secion;
+:Visualiza Calalogo de Producto;
+:Selecciona Producto;
+:Enviar Solicitud del pedido;
+
+if(¿Existe Usuario y pedido) then (si)
+    :Registra orden con fecha actual;
+    :Genera id unico;
+    :Muestra confirmacion de compre;
+
+else (no)
+    :Muestra el error;
+endif
+
+stop
+@enduml

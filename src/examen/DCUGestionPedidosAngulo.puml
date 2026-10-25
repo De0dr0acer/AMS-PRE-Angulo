@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+actor "Usuario" as user
+
+rectangle "Sistema de Gestion de Pedidos"{  
+    usecase "UC-01: Gestion de Usuarios" as UC1
+    usecase "UC-02: Visualizar Catalogo de Productos" as UC2
+    usecase "UC-03: Crear Pedido" as UC3
+    usecase "UC-04: Consultar Historial de Pedidso" as UC4
+}
+
+user--> UC1
+user--> UC2
+user--> UC3
+user--> UC4
+
+UC3 ..> UC2:<<include>> 
+
+@enduml
